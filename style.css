@@ -118,5 +118,6 @@ button:active {
 @media screen and (max-width:400px) {
     .password .copy {
         opacity: 1;
+        transform: none;
     }
 }
