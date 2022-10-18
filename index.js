@@ -61,6 +61,11 @@ function generatePassword() {
     }
 
     passEl.innerText = password;
+
+    if(!password) {
+        window.alert("Checkbox not checked!")
+    }
+
 }
 
 function generateX() {
@@ -91,6 +96,7 @@ function generateX() {
 
 getpassEl.addEventListener("click", generatePassword);
 
+
 copyEl.addEventListener("click", () => {
     const textarea = document.createElement("textarea");
     const password = pass.innerText;
@@ -104,5 +110,5 @@ copyEl.addEventListener("click", () => {
     textarea.select();
     document.execCommand("copy");
     textarea.remove();
-    alert("Copied to clipboard");
+    alert("Copied to clipboard!");
 })
