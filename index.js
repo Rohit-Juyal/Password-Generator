@@ -37,35 +37,37 @@ function getSymbol() {
 function generatePassword() {
     length = lengthEl.value;
     
-    password = "";
+    let pass = [];
 
     if(symbolEl.checked) {
-        password += getSymbol();
+        pass.push(getSymbol())
     }
 
     if(numbersEl.checked) {
-        password += getnumber();
+        pass.push(getnumber())
     }
 
     if(lowercaseEl.checked) {
-        password += getLowercase();
+        pass.push(getLowercase())
     }
 
     if(uppercaseEl.checked) {
-        password += getUppercase();
+        pass.push(getUppercase())
     }
+
+    let password = ""
+    password = pass[Math.floor(Math.random() * pass.length)];
 
     for(let i = password.length; i < length; i++) {
         const x = generateX()
         password += x;
     }
-
+    
     passEl.innerText = password;
-
+    
     if(!password) {
         window.alert("Checkbox not checked!")
     }
-
 }
 
 function generateX() {
